@@ -58,5 +58,10 @@ $route['translate_uri_dashes'] = TRUE;
 | Sample REST API Routes
 | -------------------------------------------------------------------------
 */
+
+$route['medico/'] = 'medico/medico/'; // getall
+$route['medico/(:num)'] = 'medico/medico/id/$1'; //id
+$route['medico/([a-zA-Z0-9_-]+)(.*)'] = 'medico/medico/letter/$1'; // getlike
+
 $route['api/example/users/(:num)'] = 'api/example/users/id/$1'; // Example 4
 $route['api/example/users/(:num)(\.)([a-zA-Z0-9_-]+)(.*)'] = 'api/example/users/id/$1/format/$3$4'; // Example 8
