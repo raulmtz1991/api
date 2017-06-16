@@ -19,6 +19,10 @@ require APPPATH . '/libraries/REST_Controller.php';
         }else if(($this->get('letra'){ //getLike($letra)
 
 			$medicos = $medico_model->getLike($letra);
+			if($medicos)
+		{
+		    $this->response($medicos, 200); // 200 being the HTTP response code
+		}
 
 	}
 	else
