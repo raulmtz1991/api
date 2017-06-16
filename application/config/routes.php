@@ -60,7 +60,7 @@ $route['translate_uri_dashes'] = TRUE;
 */
 
 $route['medico'] = 'medico/medico/doc'; // getall
-$route['medico/(:num)'] = 'medico/medico/doc/id/$1'; //id
+$route['medico/id/(:num)'] = 'medico/medico/doc/id/$1'; //id
 $route['medico/like/([a-zA-Z0-9_-]+)(.*)'] = 'medico/medico/doc/letra/$1'; // getlike
 
 $route['api/example/users/(:num)'] = 'api/example/users/id/$1'; // Example 4

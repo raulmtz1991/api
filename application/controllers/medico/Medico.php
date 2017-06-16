@@ -17,6 +17,7 @@ $this->load->model('medico_model');
 
  function doc_get()
     {
+
    
         if($this->get('id'))//function get($medicoid)
         {
