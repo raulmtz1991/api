@@ -8,26 +8,28 @@ require APPPATH . '/libraries/REST_Controller.php';
     {
         // Construct the parent class
         parent::__construct();
-
+$this->load->model('medico_model');
         // Configure limits on our controller methods
         // Ensure you have created the 'limits' table and enabled 'limits' within application/config/rest.php
         $this->methods['medico_get']['limit'] = 500; // 500 requests per hour per user/key
+	
          }
 
- function medico_get()
+ function doc_get()
     {
+   
         if($this->get('id'))//function get($medicoid)
         {
-            $this->response(NULL, 400);
- 		$medicos = $medico_model->get( $this->get('id') );
+            
+ 		$medicos = $this->medico_model->get( $this->get('id') );
          
 		if($medicos)
 		{
 		    $this->response($medicos, 200); // 200 being the HTTP response code
 		}
-        }else if(($this->get('letra'){ //getLike($letra)
+        }else if($this->get('letra')){ //getLike($letra)
 
-			$medicos = $medico_model->getLike($letra);
+			$medicos = $this->medico_model->getLike($this->get('letra'));
 			if($medicos)
 		{
 		    $this->response($medicos, 200); // 200 being the HTTP response code
@@ -36,12 +38,13 @@ require APPPATH . '/libraries/REST_Controller.php';
 	}
 	else
         {
-           $medicos = $medico_model->getAll();
-         
+
+           $medicos =$this->medico_model->getAll();
+      
 		if($medicos)
 		{
 		    $this->response($medicos, 200); // 200 being the HTTP response code
-		}
+		} else $this->response(NULL, 400);
         }
     }        
 
