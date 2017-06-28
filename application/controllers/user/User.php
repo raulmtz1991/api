@@ -29,6 +29,7 @@ class User extends REST_Controller{
         	{
 		    	$this->response($user, 200); // 200 being the HTTP response code
 			}
+
         }else if($this->get('id') && $this->get('extension') && $this->get('id')){ //comprobar($nombre,$extension,$id)
 
         	$user = $this->user_model->comprobar($this->get('nombre'),$this->get('extension'),$this->get('id'));
@@ -40,7 +41,7 @@ class User extends REST_Controller{
 		}
 		else if($this->get('username') ){ //comprobar($nombre,$extension,$id)
 
-        	$rpta= $this->user_model->delete($this->get('username'));
+        	$rpta = $this->user_model->delete($this->get('username'));
 
         	if($rpta){  
 
@@ -64,7 +65,7 @@ class User extends REST_Controller{
         	
         	$user = array(
 			'username'=>$this->post('username'),
-			'email'=>$this->('email'),
+			'email'=>$this->post('email'),
 			'password'=>$this->post('password'),
 			'avatar'=>$this->post('avatar'),
 			'created_at'=>$this->post('created_at'),
@@ -82,7 +83,7 @@ class User extends REST_Controller{
             				'email' => $this->post('email'),
             				'password' => $this->post('password'),
             				'avatar' => $this->post('avatar'),
-							'created_at'=>$this->post('created_at),
+							'created_at'=>$this->post('created_at'),
 							'update_at'=>$this->post('update_at'),
 							'is_admin'=>$this->post('is_admin'),
 							'is_confirmed'=>$this->post('is_confirmed'),
