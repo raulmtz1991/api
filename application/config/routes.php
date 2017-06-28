@@ -62,7 +62,9 @@ $route['translate_uri_dashes'] = TRUE;
 $route['medico'] = 'medico/http://localhost/proyec/api/medico/comprobar/4/doc'; // getall
 $route['medico/id/(:num)'] = 'medico/medico/doc/id/$1'; //id
 $route['medico/like/([a-zA-Z0-9_-]+)(.*)'] = 'medico/medico/doc/letra/$1'; // getlike
-
+//USERS
+$route['user/id/(:num)'] = 'user/user/doc/id/$1'; //id
+$route['user/like/([a-zA-Z0-9_-]+)(.*)'] = 'user/user/doc/letra/$1';//getLike
 $route['ecografia/historia/(:num)'] = 'ecografia/ecografia/doc/historia/$1'; //id
 $route['ecografia/delete/(:num)'] = 'ecografia/ecografia/doc/ecografiaid/$1'; //id
 $route['ecografia/insert/nombre/(:any)/tipo/(:any)/historiaclinicaid/(:num)'] = 'ecografia/ecografia/doc/nombre/$1/tipo/$1/historiaclinicaid/$1'; //id
