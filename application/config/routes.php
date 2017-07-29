@@ -58,8 +58,19 @@ $route['translate_uri_dashes'] = TRUE;
 | Sample REST API Routes
 | -------------------------------------------------------------------------
 */
+
+$route['medico'] = 'medico/http://localhost/proyec/api/medico/comprobar/4/doc'; // getall
+$route['medico/id/(:num)'] = 'medico/medico/doc/id/$1'; //id
+$route['medico/like/([a-zA-Z0-9_-]+)(.*)'] = 'medico/medico/doc/letra/$1'; // getlike
+//USERS
+$route['user/id/(:num)'] = 'user/user/doc/id/$1'; //id
+$route['user/like/([a-zA-Z0-9_-]+)(.*)'] = 'user/user/doc/letra/$1';//getLike
+$route['ecografia/historia/(:num)'] = 'ecografia/ecografia/doc/historia/$1'; //id
+$route['ecografia/delete/(:num)'] = 'ecografia/ecografia/doc/ecografiaid/$1'; //id
+$route['ecografia/insert/nombre/(:any)/tipo/(:any)/historiaclinicaid/(:num)'] = 'ecografia/ecografia/doc/nombre/$1/tipo/$1/historiaclinicaid/$1'; //id
+$route['ecografia/comprobar/([a-zA-Z0-9_-]+)(.*)/([a-zA-Z0-9_-]+)(.*)/(:num)'] = 'ecografia/ecografia/doc/comprobar/$1/$1/$1'; //id
+$route['enfermedades/id/(:num)'] = 'enfermedades/enfermedades/doc/id/$1';
+$route['enfermedades/like/([a-zA-Z0-9_-]+)(.*)'] = 'enfermedades/enfermedades/doc/letra/$1';
+
 $route['api/example/users/(:num)'] = 'api/example/users/id/$1'; // Example 4
 $route['api/example/users/(:num)(\.)([a-zA-Z0-9_-]+)(.*)'] = 'api/example/users/id/$1/format/$3$4'; // Example 8
-
-
-$route['alergias/(:any)'] = 'lista_alergias/data/id/$1';
